@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-3">
             Select Sub-Category
-            <select name="category_id" required class="form-control mt-3">
+            <select name="sub_category_id" id="sub_cat_id" required class="form-control mt-3">
                 <option value="" selected disabled>Select Sub-Category </option>
             </select>
         </div>            
@@ -31,14 +31,21 @@
     {
         // var selected_category = document.getElementById("cat_id").value;
         var selected_category = $("#cat_id").val();
-        alert(selected_category);
+        // alert(selected_category);
 
         $.ajax({
             url: '<?=base_url()?>admin/getSubCategoryByIdUsingAjax/'+selected_category,
             dataType : 'json'
         })
         .done(function(res){
-            console.log(res);
-        })
+
+            var row = '';
+            for(i=0;i<res.length;i++)
+            {
+                row+=`<option value="${res[i].sub_category_id}">${res[i].sub_category_name}</option>`;
+                
+            }
+            $("#sub_cat_id").html(row);
+        });
     }
 </script>
