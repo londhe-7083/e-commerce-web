@@ -59,6 +59,22 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <span class="menu-title">Product</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="product">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="<?=base_url()?>admin/add_product">Add Product</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> Sub
+                                        Product List</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </nav>
 

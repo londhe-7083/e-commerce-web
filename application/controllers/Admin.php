@@ -74,6 +74,19 @@ class Admin extends CI_Controller {
         $this->My_model->update("sub_category",$cond,$_POST);
         redirect(base_url().'admin/sub_category');
     }
+    function add_product()
+    {
+        $this->navbar();
+        $data['cat_list']=$this->My_model->select("category");
+        $this->load->view("admin/add_product",$data);
+        $this->footer();
+    }
+    function getSubCategoryByIdUsingAjax($category_id)
+    {
+        $cond = ["category_id"=>$category_id];
+        $data = $this->My_model->select_where("sub_category",$cond); 
+        echo json_encode($data);
+    }
 }
 ?>
 
