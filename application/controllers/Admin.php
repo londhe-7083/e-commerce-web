@@ -68,6 +68,12 @@ class Admin extends CI_Controller {
         $this->load->view("admin/edit_sub_category", $data);
         $this->footer();
     }
+    function update_sub_category($sub_category_id)
+    {
+        $cond = ["sub_category_id"=>$sub_category_id];
+        $this->My_model->update("sub_category",$cond,$_POST);
+        redirect(base_url().'admin/sub_category');
+    }
 }
 ?>
 
