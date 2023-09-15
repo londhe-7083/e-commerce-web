@@ -28,10 +28,11 @@
                 <td><?=$row['entry_date']?></td>
                 <td><?=$row['status']?></td>
                 <td style="width:5%;">
-                  <button class="btn btn-dark btn-sm">
+                  <button class="btn btn-dark btn-sm" type="button">
                       <i class="mdi mdi-pencil"></i>Edit
                   </button>
-                  <button class="btn btn-danger btn-sm">
+                  <a href="<?=base_url()?>admin/remove_category/<?=$row['category_id']?>">
+                  <button class="btn btn-danger btn-sm" type="button">
                       <i class="mdi mdi-delete"></i>Delete
                   </button>
                 </td>

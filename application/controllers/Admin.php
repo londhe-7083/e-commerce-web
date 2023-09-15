@@ -28,7 +28,7 @@ class Admin extends CI_Controller {
 	
 	public function category(){
         $this->load->view('admin/navbar');
-        $data['cat_list']=$this->My_model->select("category");
+        $data['cat_list']=$this->My_model->select_where("category",["status"=>"active"]);
 		$this->load->view('admin/category',$data);
 		$this->load->view('admin/footer');	
     }
@@ -43,7 +43,7 @@ class Admin extends CI_Controller {
     function sub_category()
     {
         $this->navbar();
-        $data["cat_list"]=$this->My_model->select("category");
+        $data['cat_list']=$this->My_model->select_where("category",["status"=>"active"]);
         $data["sub_cat_list"]=$this->My_model->get_sub_category();
         $this->load->view("admin/sub_category",$data);
         // $this->footer();
@@ -77,17 +77,49 @@ class Admin extends CI_Controller {
     function add_product()
     {
         $this->navbar();
-        $data['cat_list']=$this->My_model->select("category");
+        $data['cat_list']=$this->My_model->select_where("category",["status"=>"active"]);
         $this->load->view("admin/add_product",$data);
         $this->footer();
     }
     function getSubCategoryByIdUsingAjax($category_id)
     {
-        $cond = ["category_id"=>$category_id];
+        $cond = ["category_id"=>$category_id,'status'=>'active'];
         $data = $this->My_model->select_where("sub_category",$cond); 
         echo json_encode($data);
     }
+    function save_product()
+    {
+        echo "<pre>";
+        // print_r($_POST);
+        // print_r($_FILES['product_image']);
+        $fnames = [];
+        for($i=0; $i<count($_FILES['product_image']['name']);$i++)
+        {
+            $file_name = time().rand(1111,9999).$_FILES['product_image']['name'][$i];
+            $fnames[] = $file_name;
+            // array_push($fnames,$file_name);
+            move_uploaded_file($_FILES['product_image']['tmp_name'][$i],"uploads/".$_FILES['product_image']['name'][$i]);
+        }
+        // print_r(implode("&&",$fnames));
+
+        $_POST['product_image']=implode("&&",$fnames);
+        $_POST['entry_date']=date('Y-m-d H:iA');
+        $_POST['status']="active";
+        $this->My_model->insert("product",$_POST);
+        // print_r($_POST);
+        redirect(base_url().'admin/add_product');
+    }
+    function product_list()
+    {
+        $this->navbar();
+        $data['products']=$this->My_model->select_where("product",["status"=>"active"]);
+        $this->load->view("admin/product_list");
+        $this->footer();
+    }
+    function remove_category($cat_id)
+    {
+        $this->My_model->update("category",['category_id'=>$cat_id],["status"=>"deactive"]);
+        redirect(base_url().'admin/category');
+    }
 }
 ?>
-
-
