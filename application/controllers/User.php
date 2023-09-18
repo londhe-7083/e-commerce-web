@@ -1,36 +1,29 @@
 <?php
- 
- class User extends CI_Controller
- {
 
-    // private function nav()
-    // {
-    //     $this->load->view("user/navbar");
-    // }
+class User extends CI_Controller {
+
+	
+	 function navbar(){
+		$data["cat_list"]=$this->My_model->select_where("category",["status"=>"active"]);
+		foreach($data["cat_list"] as $key => $row)
+		{
+			$data["cat_list"][$key]["sub_cat_list"]=$this->My_model->select_where("sub_category",["category_id"=>$row['category_id']]);
+		}
+		// echo "<pre>";
+		// print_r($data['cat_list']);
+        $this->load->view("user/navbar",$data);
+	}
+
+    function footer(){
+        $this->load->view("user/footer");
+    }
+	public function index()
+	{
+		$this->navbar();
+		$data['slider'] = $this->My_model->select("slider");
+        $this->load->view("user/index",$data);
+		$this->footer();
+	}
+}
 
 
-    function index(){
-
-    // $this -> nav();
-    $student = ["student_name"=>"ABCD","student_mobile"=>"9960358229"];
-
-    $data = ["student"=>$student];
-    $this ->load->view("user/index",$data);
-    $this -> load -> view("user/index");
-    // $this -> load -> view("user/navbar");
-        }
-        
-    function inde()
-            {
-                // $this->load->view("admin_index");
-                echo "hello";
-                echo "hello ji viwer here";
-
-            }
-
-    function viewer()
-            {
-                echo "hello ji viwer2   here";
-            }
- }
- ?>

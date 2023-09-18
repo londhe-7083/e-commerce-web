@@ -75,6 +75,12 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="<?=base_url()?>admin/manage_slider">
+                            <span class="menu-title">Manage Slider</span>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
 

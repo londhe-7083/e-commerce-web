@@ -121,5 +121,19 @@ class Admin extends CI_Controller {
         $this->My_model->update("category",['category_id'=>$cat_id],["status"=>"deactive"]);
         redirect(base_url().'admin/category');
     }
+    function manage_slider()
+    {
+        $this->navbar();
+        // $data['products']=$this->My_model->slelect_where("product",["status"=>"active"]);
+        $this->load->view("admin/manage_slider");
+        $this->footer();
+    }
+    function save_slider(){
+       $file_name = time().rand(1111,9999).$_FILES['slider_image']['name'];
+       move_uploaded_file($_FILES['slider_image']['tmp_name'],"uploads/".$file_name);
+       $_POST['slider_image'] = $file_name;
+       $this->My_model->insert("slider",$_POST);
+       redirect(base_url().'admin/manage_slider');
+    }
 }
 ?>
