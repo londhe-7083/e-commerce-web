@@ -98,7 +98,7 @@ class Admin extends CI_Controller {
             $file_name = time().rand(1111,9999).$_FILES['product_image']['name'][$i];
             $fnames[] = $file_name;
             // array_push($fnames,$file_name);
-            move_uploaded_file($_FILES['product_image']['tmp_name'][$i],"uploads/".$_FILES['product_image']['name'][$i]);
+            move_uploaded_file($_FILES['product_image']['tmp_name'][$i],"uploads/".$file_name);
         }
         // print_r(implode("&&",$fnames));
 

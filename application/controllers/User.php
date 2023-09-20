@@ -21,7 +21,15 @@ class User extends CI_Controller {
 	{
 		$this->navbar();
 		$data['slider'] = $this->My_model->select("slider");
+		$data['trending_products'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Trending"]);
         $this->load->view("user/index",$data);
+		$this->footer();
+	}
+	function product_information($product_id)
+	{
+		$this->navbar();
+		$data['product_info']=$this->My_model->select_where("product",["product_id"=>$product_id]);
+		$this->load->view("user/product_inforamtion",$data);
 		$this->footer();
 	}
 }
