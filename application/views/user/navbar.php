@@ -19,9 +19,10 @@
       <div class="col-md-6 p-2">
         <img src="https://a2zithub.org/assets/165710745335077275.png" height="50px">
       </div>
-      <div class="col-md-6 p-2 pl-5 text-right" style="line-height:50px;text-align:end;">
-        <a href="<?=base_url()?>user/about_us" style="margin-right:20px;text-decoration: none;">About us</a>
-        <a href="<?=base_url()?>user/contact_us" style="margin-right:20px;text-decoration: none;">Contact us</a>
+      <div class="col-md-6 p-2 pl-5 text-right" style="line-height:50px;text-align:end;color:white;">
+        <a href="<?=base_url()?>user/about_us" style="margin-right:20px;text-decoration: none; color:white;">About us</a>
+        <a href="<?=base_url()?>user/contact_us" style="margin-right:20px;text-decoration: none; color:white;">Contact us</a>
+        <a href="<?=base_url()?>user/login" style="margin-right:20px;text-decoration: none; color:white;">Login</a>
       </div>
     </div>
   </div>
@@ -33,9 +34,6 @@
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
 
           <div class="dropdown">
             <?php

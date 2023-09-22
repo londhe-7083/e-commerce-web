@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="<?=base_url()?>admin_assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="<?=base_url()?>admin_assets/images/favicon.ico" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+
 </head>
 
 <body>

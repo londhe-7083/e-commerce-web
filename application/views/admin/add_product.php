@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-12 mt-3">
                 Products Deatails
-                <textarea class="form-control mt-2" name="product_deatails"></textarea>
+                <textarea class="form-control mt-2" id="editor" name="product_deatails"></textarea>
             </div>
             <div class="col-md-12 mb-3 text-center">
                 <button class="btn btn-dark mt-4 ">Save Product</button>
@@ -83,7 +83,18 @@
                 $("#sub_cat_id").html(row);
             });
     }
-</script>
+
+ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+
+    </script>
+
 
 <!-- 
 CREATE product table

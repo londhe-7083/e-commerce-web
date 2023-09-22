@@ -32,6 +32,18 @@ class User extends CI_Controller {
 		$this->load->view("user/product_inforamtion",$data);
 		$this->footer();
 	}
+	function login()
+	{
+		$this->navbar();
+		$this->load->view("user/login");
+		$this->footer();
+	}
+	public function register()
+	{
+		$this->navbar();
+		$this->load->view("user/register");
+		$this->footer();
+	}
 }
 
 
