@@ -16,14 +16,13 @@
                     <br>
                     <input type="password" id="password1" name="user_password" placeholder="Enter Your Password" class="form-control" onkeyup="checkPassword()"> 
                     <br>
-                    <input type="password" name="user_password" id="password2" placeholder="Enter Your Password" class="form-control" onkeyup="checkpassword()"> 
+                    <input type="password" name="user_password" id="password2" placeholder="Enter Your Password" class="form-control" onkeyup="checkPassword()"> 
+                    <span class="text-danger" id="password_error"></span>
+                    <span class="text-primary" id="password_error2"></span>
                     <br>
-                    <button class="btn btn-dark btn-lg disabled" id="submit_btn" style="border-radius:0px;">Register Now</button>
+                    <button class="btn btn-dark btn-lg" disabled id="submit_btn" style="border-radius:0px;">Register Now</button>
                     <br>
-                    <a href="<?=base_url()?>user/register" class="d-inline-block mt-2">
-                         Register here
-                    </a>
-                    <br>
+                    
                 </div>
             </div>
         </div>
@@ -35,12 +34,19 @@
     {
         var pass1 = $("#password1").val();
         var pass2 = $("#password2").val();
+        if(pass1.length > 5){ 
         if(pass1 == pass2)
         {
+            $("#password_error").html(" ");
             document.getElementById("submit_btn").removeAttribute("disabled");
         }
         else{
-            document.getElementById("submit_btn").setattribute("disabled","true");
+            $("#password_error").html("Password Doesn't Match");
+            document.getElementById("submit_btn").setAttribute("disabled","false");
+        }
+        }
+        else{
+            $("#password_error2").html("Password Must be 6 Characters");
         }
     }
 </script>
