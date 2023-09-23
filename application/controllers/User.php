@@ -44,6 +44,12 @@ class User extends CI_Controller {
 		$this->load->view("user/register");
 		$this->footer();
 	}
+	public function registration_process()
+	{
+		$this->My_model->insert("users",$_POST);
+		$_SESSION['message']="Account Created Succesfully";
+		redirect(base_url().'user/login');
+	}
 }
 
 

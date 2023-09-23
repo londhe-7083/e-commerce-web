@@ -1,4 +1,4 @@
-<form action="<?=base_url()?>user/login_process" method="post">
+<form action="<?=base_url()?>user/registration_process" method="post">
 <br><br>
 <div class="container">
     <div class="container">
@@ -17,8 +17,7 @@
                     <input type="password" id="password1" name="user_password" placeholder="Enter Your Password" class="form-control" onkeyup="checkPassword()"> 
                     <br>
                     <input type="password" name="user_password" id="password2" placeholder="Enter Your Password" class="form-control" onkeyup="checkPassword()"> 
-                    <span class="text-danger" id="password_error"></span>
-                    <span class="text-primary" id="password_error2"></span>
+                    <span class="text-danger d-block text-right" id="password_error"></span>
                     <br>
                     <button class="btn btn-dark btn-lg" disabled id="submit_btn" style="border-radius:0px;">Register Now</button>
                     <br>
@@ -46,7 +45,7 @@
         }
         }
         else{
-            $("#password_error2").html("Password Must be 6 Characters");
+            $("#password_error").html("Password Must be 6 Characters");
         }
     }
 </script>

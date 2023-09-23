@@ -14,7 +14,7 @@
                     <br>
                     <button class="btn btn-dark btn-lg" style="border-radius:0px;">Login Now</button>
                     <br>
-                    Don't have an account?
+                    Don't Have An Account?
                     <a href="<?=base_url()?>user/register" class="d-inline-block mt-2">
                          Register here
                     </a>
