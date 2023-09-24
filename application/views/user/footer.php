@@ -39,7 +39,7 @@ unset($_SESSION['message']);
    });
 </script>
 <?php
-// unset($_SESSION['error_message']);
+unset($_SESSION['error_message']);
  }
 ?>
 

@@ -34,8 +34,17 @@ $images=explode('&&',$product_info[0]['product_image']);
                 ?>
                 <h1><?=$product_info[0]['product_name']?></h1>
                 <h1 style="font-weight:100; letter-spacing: 3px; font-size: 40px;">&#8377;<?=number_format($product_info[0]['product_price'])?> /- </h1>
+                <?php
+                if(count($cart)==0)
+                { 
+                ?>
                 <br>
-                <button class="btn btn-dark btn-lg"> Add To Cart</button>
+                <a href="<?=base_url()?>user/add_to_cart/<?=$product_info[0]['product_id']?>">
+                    <button class="btn btn-dark btn-lg"> Add To Cart</button>
+                </a>
+                <?php
+                }
+                ?>
                 <br>
                 <br>
                 <p>

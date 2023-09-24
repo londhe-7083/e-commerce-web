@@ -29,6 +29,15 @@ class User extends CI_Controller {
 	{
 		$this->navbar();
 		$data['product_info']=$this->My_model->select_where("product",["product_id"=>$product_id]);
+
+		if(isset($_SESSION['user_id']))
+		{ 
+			$cond = ["product_id"=>$product_id, "user_id"=>$_SESSION['user_id']];
+			$data['cart'] = $this->My_model->select_where("user_cart",$cond);
+		}
+		else{
+			$data['cart']=[];
+		}
 		$this->load->view("user/product_inforamtion",$data);
 		$this->footer();
 	}
@@ -59,7 +68,7 @@ class User extends CI_Controller {
 			if(count($data)>0)
 			{
 				$_SESSION['user_id'] = $data[0]['user_id'];
-				$_SESSION['message']="Login Success";
+				$_SESSION['message']="Welcome ".$data[0]['user_name']." Login Success";
 				redirect(base_url().'user/index');
 			}
 			else{
@@ -67,6 +76,24 @@ class User extends CI_Controller {
 				redirect(base_url().'user/login');
 			}
 		} 
+	}
+	function add_to_cart($product_id)
+	{
+		if(isset($_SESSION['user_id'])) 
+		{ 
+		$data = ["product_id"=>$product_id,"user_id"=>$_SESSION['user_id'],"qty"=>1];
+		$cond = ["product_id"=>$product_id,"user_id"=>$_SESSION['user_id']];
+
+		$result = $this->My_model->select_where("user_cart",$cond);
+		if(count($result) == 0)
+		$this->My_model->insert("user_cart",$data);
+	    $_SESSION['message']="Your Product Successfully Added In Cart";
+		redirect(base_url()."user/product_information/".$product_id);
+		}
+		else{
+			$_SESSION['error_message']="You Must Have To Login First";
+			redirect(base_url()."user/login/");
+		}
 	}
 }
 

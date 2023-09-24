@@ -22,7 +22,20 @@
       <div class="col-md-6 p-2 pl-5 text-right" style="line-height:50px;text-align:end;color:white;">
         <a href="<?=base_url()?>user/about_us" style="margin-right:20px;text-decoration: none; color:white;">About us</a>
         <a href="<?=base_url()?>user/contact_us" style="margin-right:20px;text-decoration: none; color:white;">Contact us</a>
+        <?php
+        if(!isset($_SESSION['user_id']))
+        { 
+          ?>
         <a href="<?=base_url()?>user/login" style="margin-right:20px;text-decoration: none; color:white;">Login</a>
+        <?php
+        }
+        else
+        {
+        ?>
+        <a href="<?=base_url()?>user/profile" class="mr-4" style="margin-right:20px;text-decoration: none; color:white;">Profile</a>
+        <?php
+        }
+        ?>
       </div>
     </div>
   </div>
