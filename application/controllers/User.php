@@ -50,6 +50,25 @@ class User extends CI_Controller {
 		$_SESSION['message']="Account Created Succesfully";
 		redirect(base_url().'user/login');
 	}
+	public function login_process()
+	{
+	if($_POST['user_email'] && $_POST['user_password'])
+		{
+			$cond = ["user_email"=>$_POST['user_email'],"user_password"=>$_POST['user_password']];
+			$data = $this->My_model->select_where("users",$cond);
+			if(count($data)>0)
+			{
+				$_SESSION['user_id'] = $data[0]['user_id'];
+				$_SESSION['message']="Login Success";
+				redirect(base_url().'user/index');
+			}
+			else{
+				$_SESSION['error_message']="Login Failed,Invalid Deatails";
+				redirect(base_url().'user/login');
+			}
+		} 
+	}
 }
 
+?>
 
