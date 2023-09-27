@@ -95,6 +95,38 @@ class User extends CI_Controller {
 			redirect(base_url()."user/login/");
 		}
 	}
+
+	function increaseCartQty($product_id)
+		{
+			if(isset($_SESSION['user_id']))
+			{ 
+				$cond = ["product_id"=>$product_id,"user_id"=>$_SESSION['user_id']];
+				$data = $this->My_model->select_where("user_cart",$cond);
+				$newqty = $data[0]['qty']+1;
+				$data = $this->My_model->update("user_cart",$cond,['qty'=>$newqty]);
+				echo json_encode($newqty);
+		    }
+			else{
+				echo json_encode(['status'=>'failed',"msg"=>"Invalid Login"]);
+				}
+
+		}
+	function decreaseCartQty($product_id)
+		{
+			if(isset($_SESSION['user_id']))
+			{ 
+				$cond = ["product_id"=>$product_id,"user_id"=>$_SESSION['user_id']];
+				$data = $this->My_model->select_where("user_cart",$cond);
+				$newqty = $data[0]['qty']-1;
+				$data = $this->My_model->update("user_cart",$cond,['qty'=>$newqty]);
+				echo json_encode($newqty);
+		    }
+			else{
+				echo json_encode(['status'=>'failed',"msg"=>"Invalid Login"]);
+				}
+
+		}
+	
 }
 
 ?>

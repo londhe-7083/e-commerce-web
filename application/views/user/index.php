@@ -48,7 +48,14 @@
               <?=number_format($row['product_price'])?>/-
             </div>
           </div>
+          <br>
+<br>
+<br>
+<br>
+<br>
+<br>
       </div>
+      
       <?php
       }
       ?>
