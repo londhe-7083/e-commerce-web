@@ -3,7 +3,8 @@
 class User extends CI_Controller {
 
 	
-	 function navbar(){
+	 function navbar()
+	 {
 		$data["cat_list"]=$this->My_model->select_where("category",["status"=>"active"]);
 		foreach($data["cat_list"] as $key => $row)
 		{
@@ -14,7 +15,8 @@ class User extends CI_Controller {
         $this->load->view("user/navbar",$data);
 	}
 
-    function footer(){
+    function footer()
+	{
         $this->load->view("user/footer");
     }
 	public function index()
@@ -118,13 +120,28 @@ class User extends CI_Controller {
 				$cond = ["product_id"=>$product_id,"user_id"=>$_SESSION['user_id']];
 				$data = $this->My_model->select_where("user_cart",$cond);
 				$newqty = $data[0]['qty']-1;
-				$data = $this->My_model->update("user_cart",$cond,['qty'=>$newqty]);
-				echo json_encode($newqty);
+				if($newqty >= 1)
+				{
+					$data = $this->My_model->update("user_cart",$cond,['qty'=>$newqty]);
+					echo json_encode($newqty);
+				}
+				else
+				{
+					echo json_encode(1);
+				}
+				
 		    }
 			else{
 				echo json_encode(['status'=>'failed',"msg"=>"Invalid Login"]);
 				}
+		}
 
+		function cart()
+		{
+			$this->navbar();
+			$data['cart_info'] = $this->My_model->cartDeatails();
+			$this->load->view("user/cart",$data);
+			$this->footer();
 		}
 	
 }

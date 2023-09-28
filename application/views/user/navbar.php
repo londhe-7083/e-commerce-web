@@ -36,6 +36,7 @@
         <?php
         }
         ?>
+        <a href="<?=base_url()?>user/cart" class="mr-4 text-white" style="text-decoration:none;">Cart</a>
       </div>
     </div>
   </div>

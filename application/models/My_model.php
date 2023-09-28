@@ -22,5 +22,10 @@
       {
           $this->db->where($cond)->update($tname,$data);
       }
+      function cartDeatails()
+      {
+        $user_id = $_SESSION['user_id'];
+       return $this->db->query("SELECT * FROM user_cart,product WHERE user_cart.product_id =  product.product_id AND user_id = '$user_id'")->result_array();
+      }
     }
 ?>
