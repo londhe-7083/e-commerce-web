@@ -143,6 +143,15 @@ class User extends CI_Controller {
 			$this->load->view("user/cart",$data);
 			$this->footer();
 		}
+
+		function removeFromCart($product_id)
+		{
+			if(isset($_SESSION['user_id']))
+				{ 
+					$cond = ["user_id"=>$_SESSION['user_id'],"product_id"=>$product_id];
+					$this->MY_model->delete("user_cart",$cond);
+				}
+		}
 	
 }
 
