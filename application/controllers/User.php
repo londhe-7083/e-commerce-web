@@ -149,7 +149,8 @@ class User extends CI_Controller {
 			if(isset($_SESSION['user_id']))
 				{ 
 					$cond = ["user_id"=>$_SESSION['user_id'],"product_id"=>$product_id];
-					$this->MY_model->delete("user_cart",$cond);
+					$this->My_model->delete("user_cart",$cond);
+					redirect(base_url().'user/cart');
 				}
 		}
 	

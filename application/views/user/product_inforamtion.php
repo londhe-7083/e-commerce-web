@@ -74,7 +74,8 @@ $images=explode('&&',$product_info[0]['product_image']);
 
 
 <script type="text/javascript">
-    function openImage(path) {
+    function openImage(path)
+     {
         document.getElementById("full_image").src = path;
     }
 
