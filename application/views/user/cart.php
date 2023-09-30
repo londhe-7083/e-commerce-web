@@ -5,26 +5,27 @@
   }
 </style>
 <br><br>
-<form action="<?=base_url()?>">
+<form action="<?=base_url()?>user/removeFromCartMultiple" method="post">
   <div class="container">
       <div class="row">
-          <div class="col-md-10">
+          <div class="col-md-12">
               <h3>User Cart</h3>
           </div>
-          <div class="col-md-2 h5">
+          <!-- <div class="col-md-2 h5">
             <span style="dislay: inline-block;padding: 4px;position: relative; top: -10px">Select All</span>
             <input type="checkbox" onclick="checkAll(this)">
-          </div>
-      </div>
+          </div> -->
+          <div class="col-md-8">
+       
         <?php
         foreach ($cart_info as $row)
         {
         ?>
       <div class="row">
-          <div class="col-md-2 col-4 mb-4">
+          <div class="col-md-3 col-5 mb-4">
               <img src="<?=base_url()?>uploads/<?=explode("&&",$row['product_image'])[0]?>"width="100%" class="mt-2">
           </div>
-          <div class="col-md-9 col-7">
+          <div class="col-md-8 col-6">
               <h3><?=$row['product_name']?></h3>
               <h4> &#8377; <?=number_format($row['product_price'])?> /-</h4>
 
@@ -33,22 +34,43 @@
               <button type="button" class="btn btn-dark" style="border-radius:0px;margin-top:-6px;" onclick="increaseCartQty('<?=$row['product_id']?>')"> + </button>               
           </div>
           <div class="col-1 border-0">
-              <!-- <a href="<?=base_url()?>user/removeFromCart/<?=$row['product_id']?>">
+              <a href="<?=base_url()?>user/removeFromCart/<?=$row['product_id']?>">
                   <button type="button" class="btn btn-danger btn-sm mt-3"> X&nbsp;Remove</button>
-              </a> -->
-              <input type="checkbox" name="product_id" class="chkbox">
+              </a>
+              <!-- <input type="checkbox" name="product_id[]" class="chkbox" value="<?=$row['product_id']?>"> -->
           </div>
       </div>
         <?php
         }
         ?>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-10"></div>
-          <div class="col-md-2">
-              <button>Remove</button>
+          <div class="col-md-2 text-right">
+              <button class="btn btn-danger">Remove</button>
+          </div>
+        </div> -->
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+          <div class="border shadow p-3">
+          <table class="table">
+            <tr>
+              <td>Sub Total</td>
+              <td>&#8377; 5,000 /-</td>
+            </tr>
+            <tr>
+              <td>Charges</td>
+              <td>&#8377; 0 /-</td>
+            </tr>
+            <tr>
+              <th>Total</th>
+              <th>&#8377; 5,000 /-</th>
+            </tr>
+          </table>
           </div>
         </div>
+      </div>
   </div>
 </form>
 <br><br>

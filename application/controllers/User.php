@@ -136,7 +136,7 @@ class User extends CI_Controller {
 				}
 		}
 
-		function cart()
+	function cart()
 		{
 			$this->navbar();
 			$data['cart_info'] = $this->My_model->cartDeatails();
@@ -144,7 +144,7 @@ class User extends CI_Controller {
 			$this->footer();
 		}
 
-		function removeFromCart($product_id)
+	function removeFromCart($product_id)
 		{
 			if(isset($_SESSION['user_id']))
 				{ 
@@ -154,6 +154,23 @@ class User extends CI_Controller {
 				}
 		}
 	
+	function removeFromCartMultiple()
+		{
+			if(isset($_POST['product_id']))
+			{
+				for($i=0;$i<count($_POST['product_id']);$i++)
+				 {
+					$cond = ["user_id"=>$_SESSION['user_id'],"product_id"=>$_POST['product_id'][$i]];
+					$this->My_model->delete("user_cart",$cond);
+				 }
+				 redirect(base_url().'user/cart');
+			}
+			else
+			{
+				redirect(base_url().'user/cart');
+			}
+			
+		}
 }
 
 ?>
