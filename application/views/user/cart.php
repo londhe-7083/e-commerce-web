@@ -16,10 +16,13 @@
             <input type="checkbox" onclick="checkAll(this)">
           </div> -->
           <div class="col-md-8">
-       
+
         <?php
+
+          $ttl=0;
         foreach ($cart_info as $row)
         {
+          $ttl += ($row['product_price']*$row['qty']);
         ?>
       <div class="row">
           <div class="col-md-3 col-5 mb-4">
@@ -57,7 +60,7 @@
           <table class="table">
             <tr>
               <td>Sub Total</td>
-              <td>&#8377; 5,000 /-</td>
+              <td>&#8377; <?=number_format($ttl)?> /-</td>
             </tr>
             <tr>
               <td>Charges</td>
@@ -65,7 +68,7 @@
             </tr>
             <tr>
               <th>Total</th>
-              <th>&#8377; 5,000 /-</th>
+              <th>&#8377; <?=number_format($ttl)?> /-</th>
             </tr>
           </table>
           </div>

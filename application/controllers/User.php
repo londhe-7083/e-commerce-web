@@ -138,10 +138,19 @@ class User extends CI_Controller {
 
 	function cart()
 		{
-			$this->navbar();
-			$data['cart_info'] = $this->My_model->cartDeatails();
-			$this->load->view("user/cart",$data);
-			$this->footer();
+			if(isset($_SESSION['user_id']))
+				{
+					$this->navbar();
+					$data['cart_info'] = $this->My_model->cartDeatails();
+					$this->load->view("user/cart",$data);
+					$this->footer();
+				}
+
+			else
+			{
+				redirect(base_url().'user/login');
+			}
+
 		}
 
 	function removeFromCart($product_id)
