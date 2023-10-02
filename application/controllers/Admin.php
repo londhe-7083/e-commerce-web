@@ -135,5 +135,12 @@ class Admin extends CI_Controller {
        $this->My_model->insert("slider",$_POST);
        redirect(base_url().'admin/manage_slider');
     }
+
+    function pending_orders()
+    {
+        $this->navbar();
+        $data['orders']=$this->My_model->select_where("order_tbl",["order_status"=>"pending"]);
+        $this->load->view("admin/pending_orders",$data);
+    }
 }
 ?>

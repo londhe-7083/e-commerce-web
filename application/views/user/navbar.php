@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +12,7 @@
 </head>
 
 <body>
-  <div class="container-fluid" style="background-image: linear-gradient(45deg,black 15%,white 15%,white 16%, black 16%, black 17.5%, white 17.5%,white 10%, black );">
+  <div class="container-fluid hideinprint" style="background-image: linear-gradient(45deg,black 15%,white 15%,white 16%, black 16%, black 17.5%, white 17.5%,white 10%, black );">
     <div class="row">
       <div class="col-md-6 p-2">
         <img src="https://a2zithub.org/assets/165710745335077275.png" height="50px">

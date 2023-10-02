@@ -31,8 +31,6 @@
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="mdi mdi-menu"></span>
                 </button>
-
-
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-toggle="offcanvas">
                     <span class="mdi mdi-menu"></span>
@@ -44,7 +42,28 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-
+                <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <span class="menu-title">Product</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="product">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="<?=base_url()?>admin/pending_orders">Pending Orders</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> Sub
+                                        Dispatch Orders</a></li>
+                          
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> Sub
+                                        Delivered Orders</a></li>
+                            
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> Sub
+                                        Rejected Orders</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#category" aria-expanded="false"
                             aria-controls="ui-basic">
