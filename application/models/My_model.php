@@ -5,6 +5,7 @@
       function insert($tname,$data)
       {
         $this->db->insert($tname,$data);
+        return $this->db->insert_id();
       }
       function select($tname)
       {

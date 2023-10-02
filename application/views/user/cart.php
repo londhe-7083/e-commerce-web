@@ -5,7 +5,7 @@
   }
 </style>
 <br><br>
-<form action="<?=base_url()?>user/removeFromCartMultiple" method="post">
+<!-- <form action="<?=base_url()?>user/removeFromCartMultiple" method="post"> -->
   <div class="container">
       <div class="row">
           <div class="col-md-12">
@@ -71,11 +71,14 @@
               <th>&#8377; <?=number_format($ttl)?> /-</th>
             </tr>
           </table>
+          <a href="<?=base_url()?>user/confirm_address">
+            <button class="btn btn-dark w-100">Proceed To Checkout</button>
+          </a>
           </div>
         </div>
       </div>
   </div>
-</form>
+<!-- </form> -->
 <br><br>
 <br><br>
 <br><br>

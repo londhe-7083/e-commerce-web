@@ -180,6 +180,66 @@ class User extends CI_Controller {
 			}
 			
 		}
+		public function confirm_address()
+		{
+			$this->navbar();
+			$this->load->view("user/confirm_address");
+			$this->footer();
+		}
+
+		public function place_order()
+		{
+			echo "<pre>";
+			$cart_info = $this->My_model->cartDeatails();
+			$ttl = 0;
+			foreach($cart_info as $row)
+			{
+				$ttl += ($row['product_price']*$row['qty']);
+			}
+			$_POST['user_id']=$_SESSION['user_id'];
+			$_POST['total_amount']=$ttl;
+			$_POST['order_date']=date('Y-m-d');
+			$_POST['order_status']="pending";
+			$_POST['status']="active";
+			// $sql = "CREATE TABLE order_tbl(order_id INT PRIMARY KEY AUTO_INCREMENT, deliver_to VARCHAR(200), state VARCHAR(50), district VARCHAR(50),city VARCHAR(50), area VARCHAR(200), pincode VARCHAR(7), total_amount INT, order_date DATE, order_status VARCHAR(20), status VARCHAR(20))";
+			$order_id = $this->My_model->insert("order_tbl",$_POST);
+			
+			foreach($cart_info as $row)
+			{
+				$product['order_id'] = $order_id;
+				$product['user_id']=$_SESSION['user_id'];
+				$product['product_id'] = $row['product_id'];
+				$product['product_name'] = $row['product_name'];
+				$product['product_price'] = $row['product_price'];
+				$product['qty'] = $row['qty'];
+				$product['product_label'] = $row['product_label'];
+				$product['product_deatails'] = $row['product_deatails'];
+				$product['product_image'] = $row['product_image'];
+				$product['status'] = 'active';
+
+				// $sql = "CREATE TABLE order_details (order_det_id INT PRIMARY KEY AUTO_INCREMENT, order_id INT, user_id INT, product_id INT, product_name TEXT, product_price INT, qty INT, product_label VARCHAR(200), product_deatails TEXT, product_image TEXT, status VARCHAR(200))";
+				$this->db->insert("order_details",$product);
+			}
+			$this->My_model->delete("user_cart", ["user_id"=>$_SESSION['user_id']]);
+			redirect(base_url().'user/my_orders');
+		}		
+		function my_orders()
+		{
+			$this->navbar();
+			$data['orders']=array_reverse($this->My_model->select_where("order_tbl",["user_id"=>$_SESSION['user_id'],'status'=>'active']));
+			$this->load->view("user/My_orders",$data);
+			$this->footer();
+		}
+		function open_invoice($order_id)
+		{
+			$this->navbar();
+			$data['order_det']=$this->My_model->select_where("order_tbl",["order_id"=>$order_id]);
+
+			$data['order_products']=$this->My_model->select_where("order_details",["order_id"=>$order_id]);
+
+			$this->load->view("user/open_invoice",$data);
+			$this->footer();
+		}
 }
 
 ?>
