@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light p-4">
     <div class="row">
         <div class="col-md-12">
-            <h3>Pending Orders</h3>
+            <h3>Dispatched Orders</h3>
         </div>
         <div class="col-md-12 table-responsive">
             <table class="table table-bordered">

@@ -53,13 +53,13 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link"
                                         href="<?=base_url()?>admin/pending_orders">Pending Orders</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> Sub
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/dispatched_orders"> 
                                         Dispatch Orders</a></li>
                           
-                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> Sub
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> 
                                         Delivered Orders</a></li>
                             
-                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> Sub
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> 
                                         Rejected Orders</a></li>
                             </ul>
                         </div>

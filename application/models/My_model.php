@@ -32,5 +32,9 @@
       {
         $this->db->where($cond)->delete($tname);
       }
+      function getOrderDetails($status)
+      {
+        return $this->db->query("SELECT * FROM order_tbl, users WHERE order_tbl.user_id = users.user_id AND order_tbl.order_status = '$status'")->result_array();
+      }
     }
 ?>

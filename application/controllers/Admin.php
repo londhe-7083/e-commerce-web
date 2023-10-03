@@ -139,8 +139,36 @@ class Admin extends CI_Controller {
     function pending_orders()
     {
         $this->navbar();
-        $data['orders']=$this->My_model->select_where("order_tbl",["order_status"=>"pending"]);
+        $data['orders']=$this->My_model->getOrderDetails("pending");
         $this->load->view("admin/pending_orders",$data);
+    }
+
+    function dispatched_orders()
+    {
+        $this->navbar();
+        $data['orders']=$this->My_model->getOrderDetails("dispatched");
+        $this->load->view("admin/dispatched_order",$data);
+    }
+
+    function view_order_details($order_id)
+    {
+        $this->navbar();
+			$data['order_det']=$this->My_model->select_where("order_tbl",["order_id"=>$order_id]);
+
+			$data['order_products']=$this->My_model->select_where("order_details",["order_id"=>$order_id]);
+
+			$this->load->view("admin/view_order_details",$data);
+			$this->footer();
+    }
+
+    function dispatch_order($order_id){
+
+        $data["order_status"]="dispatched";
+        $data["dispatch_date"]=date('Y-m-d');
+
+        $cond["order_id"]=$order_id;
+        $this->My_model->update("order_tbl",$cond,$data);
+        redirect(base_url()."admin/pending_orders");
     }
 }
 ?>
