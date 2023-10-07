@@ -19,7 +19,10 @@
 <?php
 unset($_SESSION['message']);
   }
-  ?>    
+  ?> 
+
+  
+     
 <?php
  if(isset($_SESSION['error_message']))
  {

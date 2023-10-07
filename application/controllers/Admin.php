@@ -170,5 +170,15 @@ class Admin extends CI_Controller {
         $this->My_model->update("order_tbl",$cond,$data);
         redirect(base_url()."admin/pending_orders");
     }
+    function deliver_order($order_id)
+    {
+        $data["order_status"]="dispatched";
+        $data["deliver_date"]=date('Y-m-d');
+
+        $cond["order_id"]=$order_id;
+        $this->My_model->update("order_tbl",$cond,$data);
+        redirect(base_url()."admin/pending_orders");   
+    }
+    
 }
 ?>

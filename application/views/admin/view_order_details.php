@@ -74,12 +74,30 @@
                 </div>
                 <br><br>
                 <div class="text-center hideinprint">
+                    <?php
+                    if($order_det[0]['order_status']=="pending")
+                    { 
+                    ?>
                     <a href="<?=base_url()?>admin/dispatch_order/<?=$order_det[0]['order_id']?>">
                         <button class="btn btn-primary btn-lg">Dispatch Order</button>
                     </a>
                     <a href="<?=base_url()?>admin/reject_order/<?=$order_det[0]['order_id']?>">
                         <button class="btn btn-primary btn-lg">Reject Order</button>
                     </a>
+                    <?php
+                    }
+                    if($order_det[0]['order_status']=="dispatched")
+                    { 
+                    ?>
+                     <a href="<?=base_url()?>admin/deliver_order/<?=$order_det[0]['order_id']?>">
+                        <button class="btn btn-primary btn-lg">Delivered Order</button>
+                    </a>
+                    <a href="<?=base_url()?>admin/unable_to_deliver_order/<?=$order_det[0]['order_id']?>">
+                        <button class="btn btn-primary btn-lg">Unable Order</button>
+                    </a>
+                    <?php
+                    }
+                    ?>
             </div>
         </div>
     </div>

@@ -45,7 +45,7 @@
                 <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
                             aria-controls="ui-basic">
-                            <span class="menu-title">Product</span>
+                            <span class="menu-title">Orders</span>
                             <i class="menu-arrow"></i>
                             <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                         </a>
@@ -56,7 +56,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/dispatched_orders"> 
                                         Dispatch Orders</a></li>
                           
-                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> 
+                                <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/deliver_order"> 
                                         Delivered Orders</a></li>
                             
                                 <li class="nav-item"> <a class="nav-link" href="<?=base_url()?>admin/product_list"> 

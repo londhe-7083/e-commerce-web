@@ -35,7 +35,7 @@ class User extends CI_Controller {
 		if(isset($_SESSION['user_id']))
 		{ 
 			$cond = ["product_id"=>$product_id, "user_id"=>$_SESSION['user_id']];
-			$data['cart'] = $this->My_model->select_where("user_cart",$cond);
+			 $data['cart'] = $this->My_model->select_where("user_cart",$cond);
 		}
 		else{
 			$data['cart']=[];
@@ -68,7 +68,7 @@ class User extends CI_Controller {
 			$cond = ["user_email"=>$_POST['user_email'],"user_password"=>$_POST['user_password']];
 			$data = $this->My_model->select_where("users",$cond);
 			if(count($data)>0)
-			{
+			{	
 				$_SESSION['user_id'] = $data[0]['user_id'];
 				$_SESSION['message']="Welcome ".$data[0]['user_name']." Login Success";
 				redirect(base_url().'user/index');
