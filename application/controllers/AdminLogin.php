@@ -2,6 +2,17 @@
 class AdminLogin extends CI_Controller
  {	
 	
+	 function __construct()
+    { 
+        parent::__construct();
+        date_default_timezone_set('Asia/Kolkata');
+        if(isset($_SESSION['admin_id']))
+        {
+            redirect(base_url()."adminlogin/index");
+            exit();
+        }
+    }
+
 	public function index()
 	{
 		$this->load->view("adminlogin");

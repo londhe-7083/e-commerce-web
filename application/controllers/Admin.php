@@ -7,6 +7,11 @@ class Admin extends CI_Controller {
     { 
         parent::__construct();
         date_default_timezone_set('Asia/Kolkata');
+        if(!isset($_SESSION['admin_id']))
+        {
+            redirect(base_url()."adminlogin/index");
+            exit();
+        }
     }
 
     function navbar()
