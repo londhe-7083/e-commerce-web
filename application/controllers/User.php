@@ -23,7 +23,11 @@ class User extends CI_Controller {
 	{
 		$this->navbar();
 		$data['slider'] = $this->My_model->select("slider");
-		$data['trending_products'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Trending"]);
+		$data['trending_products'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Trending"]);
+		$data['Featured'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Featured"]);
+		$data['Upto20OFF'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Upto 20% OFF"],2,3);
+		$data['Upto10OFF'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Upto 10% OFF"]);
+		$data['Upto30OFF'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Upto 30% OFF"]);
         $this->load->view("user/index",$data);
 		$this->footer();
 	}

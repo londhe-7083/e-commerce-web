@@ -44,14 +44,14 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse col-md-11" id="collapsibleNavbar">
+        <ul class="navbar-nav col-md-12">
 
-          <div class="dropdown">
+        <div class="dropdown col-md-11">
             <?php
-         foreach($cat_list as $row)
-         {
-          ?>
+          foreach($cat_list as $row)
+          {
+            ?>
             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
               data-bs-toggle="dropdown" aria-expanded="false">
               <?=$row['category_name']?>
@@ -74,8 +74,13 @@
           <?php
               }
           ?>
-           </div>
-        </ul>
+        </div>
+
+
+        <div class=" col-md-1">
+          <button class="btn btn-outline-primary">Products</button>
+        </div>
+      </ul>
       </div>
     </div>
   </nav>

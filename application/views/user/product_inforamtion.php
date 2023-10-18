@@ -12,15 +12,15 @@ $images=explode('&&',$product_info[0]['product_image']);
                     { 
                     ?>
                     <div style="margin-top:10px;">
-                        <img src="<?=base_url()?>uploads/<?=$row?>" width="90%"
+                        <img src="<?=base_url()?>uploads/<?=$row?>" width="60%"
                             onclick="openImage('<?=base_url()?>uploads/<?=$row?>')">
                     </div>
                     <?php
                         }
                     ?>
                 </div>
-                <div class="col-md-9">
-                    <img id="full_image" src="<?=base_url()?>uploads/<?=$images[0]?>" width="100%">
+                <div class="col-md-9 mt-2" style="margin-left:-26px">
+                    <img id="full_image" src="<?=base_url()?>uploads/<?=$images[0]?>" width="90%">
                 </div>
             </div>
         </div>

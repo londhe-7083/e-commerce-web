@@ -47,5 +47,12 @@ unset($_SESSION['error_message']);
 ?>
 
 </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>hello</h3>
+    </div>
+  </div>
+</div>
 </body>
 </html> 

@@ -19,6 +19,10 @@
       {
         return $this->db->where($cond)->get($tname)->result_array();
       }
+      function select_where2($tname,$cond)
+      {
+        return $this->db->where($cond)->get($tname,4)->result_array();
+      }
       function update($tname,$cond,$data)
       {
           $this->db->where($cond)->update($tname,$data);
