@@ -118,7 +118,7 @@ class Admin extends CI_Controller {
     {
         $this->navbar();
         $data['products']=$this->My_model->select_where("product",["status"=>"active"]);
-        $this->load->view("admin/product_list");
+        $this->load->view("admin/product_list",$data);
         $this->footer();
     }
     function remove_category($cat_id)

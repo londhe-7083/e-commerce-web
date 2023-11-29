@@ -20,10 +20,10 @@
             </div>
             <div class="col-6">
                     <input type="text" name="sub_category_name" class="form-control" placeholder="Enter Sub Category Name" value="<?=$sub_cat_info[0]['sub_category_name']?>">
-                </div>
-                <div class="col-3">
-                    <button class="btn btn-primary w-100">Save Category</button>
-                </div>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-primary w-100">Save Category</button>
+            </div>
         </div>
     </div>
 </form>

@@ -40,7 +40,7 @@
   </div>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="<?= base_url()?>user/index">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -77,8 +77,10 @@
         </div>
 
 
-        <div class=" col-md-1">
-          <button class="btn btn-outline-primary">Products</button>
+        <div class="col-md-1">
+          <button class="btn btn-outline-primary"> 
+                   <a href="<?=base_url()?>user/all_product" class="btn-outline-primary" style="text-decoration:none;">Products</a>
+          </button>
         </div>
       </ul>
       </div>

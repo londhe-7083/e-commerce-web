@@ -50,7 +50,30 @@ unset($_SESSION['error_message']);
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <h3>hello</h3>
+      <!-- <h3>hello</h3> -->
+      <footer>
+        <div class="footer-line"></div>
+        <div class="footer-wrapper">
+          <section class="footer-top">
+            <div class="footer-headline">
+              <h2>Subscribe to our website</h2>
+              <p>
+                Stay up to date with our products and offers.
+              </p>
+            </div>
+            <div class="footer-subscribe">
+              <input type="email" spellcheck="false" placeholder="Your email">
+              <button>
+                Sign Up
+              </button>
+              </div>
+          </section>
+          <div class="footer-columns">
+            <section class="footer-logo">
+              <h2>
+              
+        </div>
+      </footer>
     </div>
   </div>
 </div>

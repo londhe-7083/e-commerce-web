@@ -25,7 +25,7 @@ class User extends CI_Controller {
 		$data['slider'] = $this->My_model->select("slider");
 		$data['trending_products'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Trending"]);
 		$data['Featured'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Featured"]);
-		$data['Upto20OFF'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Upto 20% OFF"],2,3);
+		$data['Upto20OFF'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Upto 20% OFF"]);
 		$data['Upto10OFF'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Upto 10% OFF"]);
 		$data['Upto30OFF'] = $this->My_model->select_where2("product",["status"=>"active","product_label"=>"Upto 30% OFF"]);
         $this->load->view("user/index",$data);
@@ -142,18 +142,24 @@ class User extends CI_Controller {
 
 	function cart()
 		{
-			if(isset($_SESSION['user_id']))
-				{
-					$this->navbar();
-					$data['cart_info'] = $this->My_model->cartDeatails();
-					$this->load->view("user/cart",$data);
-					$this->footer();
-				}
 
-			else
-			{
-				redirect(base_url().'user/login');
-			}
+			// if(isset($_SESSION['user_id']))
+			// 	{
+			// 		$this->navbar();
+			// 		$data['trending_products'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Trending"]);
+			// 		$this->footer();
+			// 	}
+
+			// else
+			// {
+			// 	redirect(base_url().'user/login');
+			// }
+			$this->navbar();
+			$data['cart_info'] = $this->My_model->cartDeatails();
+			// print_r($data);
+			$this->load->view("user/cart",$data);
+			$this->footer();
+
 
 		}
 
@@ -167,8 +173,7 @@ class User extends CI_Controller {
 				}
 		}
 	
-	function removeFromCartMultiple()
-		{
+	function removeFromCartMultiple(){
 			if(isset($_POST['product_id']))
 			{
 				for($i=0;$i<count($_POST['product_id']);$i++)
@@ -183,7 +188,7 @@ class User extends CI_Controller {
 				redirect(base_url().'user/cart');
 			}
 			
-		}
+	}
 		public function confirm_address()
 		{
 			$this->navbar();
@@ -234,6 +239,7 @@ class User extends CI_Controller {
 			$this->load->view("user/My_orders",$data);
 			$this->footer();
 		}
+		
 		function open_invoice($order_id)
 		{
 			$this->navbar();
@@ -244,7 +250,57 @@ class User extends CI_Controller {
 			$this->load->view("user/open_invoice",$data);
 			$this->footer();
 		}
+
+    
+function all_product()
+	{
+		$this->navbar();
+		$data['trending_products'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Trending"]);
+		$data['Featured'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Featured"]);
+		$data['Upto20OFF'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Upto 20% OFF"]);
+		$data['Upto10OFF'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Upto 10% OFF"]);
+		$data['Upto30OFF'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Upto 30% OFF"]);
+		$this->load->view("user/all_product",$data);
+		$this->footer();
+	}
+
+function show_product(){
+
+	$this->navbar();
+	$data['trending_products'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Trending"]);
+	$this->load->view("user/shoes",$data);
+	$this->footer();
 }
+
+function mobiles(){
+
+	$this->navbar();
+	$data['Upto20OFF'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Upto 20% OFF"]);
+	$this->load->view("user/mobiles",$data);
+	$this->footer();
+}
+
+function womens(){
+	$this->navbar();
+	$data['Featured'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Featured"]);
+	$this->load->view("user/womens",$data);
+	$this->footer();
+}
+
+function s_watch(){
+	$this->navbar();
+	$data['Upto10OFF'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Upto 10% OFF"]);
+	$this->load->view("user/s_watch",$data);
+	$this->footer();
+}
+
+function s_tv(){
+	$this->navbar();
+	$data['Upto30OFF'] = $this->My_model->select_where("product",["status"=>"active","product_label"=>"Upto 30% OFF"]);
+	$this->load->view("user/s_tv",$data);
+	$this->footer();
+}
+	}
 
 ?>
 
