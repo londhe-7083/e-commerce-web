@@ -70,10 +70,35 @@ unset($_SESSION['error_message']);
           </section>
           <div class="footer-columns">
             <section class="footer-logo">
-              <h2>
-              
+              <h2></h2>
+            </section>
+            <section>
+                <h3>Product</h3>
+                <ul>
+                  <li>
+                    <a href="#" title="API">API</a>
+                  </li>
+                </ul>
+            </section>
+          </div>
+
+          <div class="footer-bottom">
+              <div class="social-links">
+                <ul>
+                  <li>
+                    <a href="#" title="Instagram">
+                      <img src="" alt="instagram">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+          <small>Athers intelligense Ltd. <span id="year"></span>,All rights reserved</small>
         </div>
       </footer>
+      <script>
+        document.getElementById('year').innerHTML = new Date().getFullYear();
+      </script>
     </div>
   </div>
 </div>

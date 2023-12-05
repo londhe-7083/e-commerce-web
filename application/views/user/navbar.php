@@ -15,7 +15,8 @@
   <div class="container-fluid hideinprint" style="background-image: linear-gradient(45deg,black 15%,white 15%,white 16%, black 16%, black 17.5%, white 17.5%,white 10%, black );">
     <div class="row">
       <div class="col-md-6 p-2">
-        <img src="https://a2zithub.org/assets/165710745335077275.png" height="50px">
+        <!-- <img src="https://a2zithub.org/assets/165710745335077275.png" height="50px"> -->
+        <img src="<?=base_url()?>admin_assets/images/s5.png" height="68px">
       </div>
       <div class="col-md-6 p-2 pl-5 text-right" style="line-height:50px;text-align:end;color:white;">
         <a href="<?=base_url()?>user/about_us" style="margin-right:20px;text-decoration: none; color:white;">About us</a>
