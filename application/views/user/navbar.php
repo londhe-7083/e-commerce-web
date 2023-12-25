@@ -11,6 +11,24 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="<?=base_url()?>admin_assets/css/style-2.css">
   
+  <style>
+    .button:hover{
+      color: white;
+    }
+
+    .logo{
+      width: 120px;
+      color: white;
+      margin: 5px;
+      cursor: pointer;
+      transition: 600ms;
+    }
+
+    .logo:hover{
+      transform: scale(1.09);
+    }
+
+  </style>
 </head>
 
 <body>
@@ -18,10 +36,10 @@
     <div class="row">
       <div class="col-md-6 p-2">
         <!-- <img src="https://a2zithub.org/assets/165710745335077275.png" height="50px"> -->
-        <img src="<?=base_url()?>admin_assets/images/s5.png" height="68px">
+        <h2 src="<?=base_url()?>admin_assets/images/s5.png" class="logo">SHOPLY</h2>
       </div>
       <div class="col-md-6 p-2 pl-5 text-right" style="line-height:50px;text-align:end;color:white;">
-        <a href="<?=base_url()?>user/about_us" style="margin-right:20px;text-decoration: none; color:white;">About us</a>
+      <a href="<?=base_url()?>user/about_us" style="margin-right:20px;text-decoration: none; color:white;">About us</a>
         <a href="<?=base_url()?>user/contact_us" style="margin-right:20px;text-decoration: none; color:white;">Contact us</a>
         <?php
         if(!isset($_SESSION['user_id']))
@@ -80,7 +98,7 @@
         </div>
 
 
-        <div class="col-md-1">
+        <div class="col-md-1 buttons">
           <button class="btn btn-outline-primary"> 
                    <a href="<?=base_url()?>user/all_product" class="btn-outline-primary" style="text-decoration:none;">Products</a>
           </button>

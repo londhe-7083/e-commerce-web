@@ -300,6 +300,12 @@ function s_tv(){
 	$this->load->view("user/s_tv",$data);
 	$this->footer();
 }
+
+function contact_us(){
+	$this->navbar();
+	$this->load->view("user/contact_us");
+	$this->footer();
+}
 	}
 
 ?>

@@ -53,15 +53,15 @@ unset($_SESSION['error_message']);
             <div class="footer-wrapper">
                 <section class="footer-top">
                     <div class="footer-headline">
-                        <h2>Subscribe to our newsletter</h2>
+                        <h2>Subscribe to our Shoply</h2>
                         <p>
-                            Stay up to date with our news and articles
+                            Stay up to date with our offers
                         </p>
                     </div>
                     <div class="footer-subscribe">
                         <input type="email" spellcheck="false" placeholder="Your Email">
                         <button>
-                            Sign Up
+                            <a href="<?= base_url()?>user/register" class="signup" style="text-decoration:none; color: white;">Sign Up</a>
                         </button>
                     </div>
                 </section>
@@ -104,7 +104,7 @@ unset($_SESSION['error_message']);
                                 <a href="#" title="Sitemap">Sitemap</a>
                             </li>
                             <li>
-                                <a href="#" title="Newsletter">Newsletter</a>
+                                <a href="#" title="Newsletter">Shoply</a>
                             </li>
                             <li>
                                 <a href="#" title="Help Centre">Help Centre</a>

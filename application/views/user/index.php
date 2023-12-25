@@ -27,7 +27,7 @@
       <div class="col-md-10 mb-4">
         <h3>Trending Products</h3>
       </div>
-      <div class="col-md-2 text-end mb-4">
+      <div class="col-md-2 text-end mb-4 button">
         <button class="btn btn-outline-success">
           <a href="<?=base_url()?>user/show_product" class="btn-outline-success" style="text-decoration:none;">Show all</a>
         </button>
@@ -64,7 +64,7 @@
       <div class="col-md-10 mb-4">
         <h3>Womens special</h3>
       </div>
-      <div class="col-md-2 text-end mb-4">
+      <div class="col-md-2 text-end mb-4 button ">
         <button class="btn btn-outline-success">
           <a href="<?=base_url()?>user/womens" class="btn-outline-success" style="text-decoration:none;">Show all</a>
         </button>     
@@ -101,7 +101,7 @@
       <div class="col-md-10 mb-4">
         <h3>Mobiles</h3>
       </div>
-      <div class="col-md-2 text-end mb-4">
+      <div class="col-md-2 text-end mb-4 button">
         <button class="btn btn-outline-success">
           <a href="<?=base_url()?>user/mobiles" class="btn-outline-success" style="text-decoration:none;">Show all</a>
         </button>     
@@ -173,8 +173,8 @@
     <div class="row">
       <div class="col-md-10 mb-4">
         <h3>Smart TVs</h3>
-      </div>
-      <div class="col-md-2 text-end mb-4">
+      </div> 
+      <div class="col-md-2 text-end mb-4 button">
         <button class="btn btn-outline-success">
           <a href="<?=base_url()?>user/s_tv" class="btn-outline-success" style="text-decoration:none;">Show all</a>
         </button>      
