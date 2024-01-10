@@ -1,4 +1,4 @@
-<section class="Scontact">
+<form class="Scontact" action="<?=base_url()?>user/contact_send" method="post">
     <div class="Scontent">
         <h2>Contact Us</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia aspernatur dicta eligendi error quas recusandae omnis illo rem rerum similique.</p>
@@ -42,7 +42,7 @@
                     <span>Email</span>
                 </div>
                 <div class="Sinputbox">
-                    <textarea name="" required></textarea>
+                    <textarea name="text" required></textarea>
                     <span>Type your Message....</span>
                 </div>
                 <div class="Sinputbox">
@@ -52,4 +52,4 @@
         </div>
     </div>
     
-</section>
+</form>

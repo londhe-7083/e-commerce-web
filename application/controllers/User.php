@@ -306,6 +306,17 @@ function contact_us(){
 	$this->load->view("user/contact_us");
 	$this->footer();
 }
+
+function contact_send(){
+	$this->My_model->insert("contact_deta",$_POST);
+	redirect(base_url().'user/contact_us');
+}
+
+function about_us(){
+	$this->navbar();
+	$this->load->view("user/about_us");
+	$this->footer();
+}
 	}
 
 ?>

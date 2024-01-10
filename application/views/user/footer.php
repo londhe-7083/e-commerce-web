@@ -191,7 +191,7 @@ unset($_SESSION['error_message']);
                         </ul>
                     </div>
 
-                    <small>© Atheros Intelligence Ltd. <span id="year"></span>, All rights reserved</small>
+                    <small>© Atheros Shoply Ltd. <span id="year"></span>, All rights reserved</small>
                 </div>
             </div>
         </footer>

@@ -42,14 +42,14 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#orders" aria-expanded="false"
                             aria-controls="ui-basic">
                             <span class="menu-title">Orders</span>
                             <i class="menu-arrow"></i>
                             <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                         </a>
-                        <div class="collapse" id="product">
+                        <div class="collapse" id="orders">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link"
                                         href="<?=base_url()?>admin/pending_orders">Pending Orders</a></li>
@@ -64,10 +64,29 @@
                             </ul>
                         </div>
                     </li>
+
+                    <li class="nav-item"> 
+                        <a class="nav-link" data-toggle="collapse" href="#contact"
+                            aria-controls="ui-basic" aria-expanded="false">
+                            <span class="menu-title">Contact</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="contact">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="<?=base_url()?>admin/contact">Contact</a></li>
+                            </ul>
+
+                        </div>
+
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#category" aria-expanded="false"
                             aria-controls="ui-basic">
-                            <span class="menu-title">category</span>
+                            <span class="menu-title">Category</span>
                             <i class="menu-arrow"></i>
                             <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                         </a>

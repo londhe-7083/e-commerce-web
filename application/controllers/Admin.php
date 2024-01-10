@@ -185,5 +185,11 @@ class Admin extends CI_Controller {
         redirect(base_url()."admin/pending_orders");   
     }
     
+    function contact(){
+        $this->navbar();
+        $data['messege']=$this->My_model->select("contact_deta");
+        $this->load->view('admin/contact',$data);
+        $this->footer();
+    }
 }
 ?>
