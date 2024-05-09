@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 // $config['base_url'] = 'http://localhost/codeigniter3/CodeIgniter-1/';
 // $config['base_url'] = 'https://e-commerce-web00.000webhostapp.com/';
-$config['base_url'] = 'http://localhost/php/online-shoping/e-commerce-web-main/';
+$config['base_url'] = 'http://localhost/php/online-shoping/e-commerce-web/';
 
 /*
 |--------------------------------------------------------------------------
